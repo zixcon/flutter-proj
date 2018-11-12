@@ -6,7 +6,7 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:knots/viewmodel/task_vm.dart';
 import 'package:knots/view/panel/task_panel.dart';
-import 'package:knots/service/task_service.dart';
+import 'package:knots/service/api/task_service_api.dart';
 import 'package:knots/view/page/common/common_header.dart';
 import 'package:knots/view/page/common/common_image.dart';
 import 'package:knots/view/page/common/common_profile.dart';

@@ -1,75 +1,58 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:knots/model/task.dart';
+import 'package:knots/service/api/task_service_api.dart';
 
-class TaskApiService {
-
-  final _baseUrl = 'https://swapi.co/api';
-
-  static final TaskApiService _internal = TaskApiService.internal();
-  factory TaskApiService () => _internal;
-  TaskApiService.internal();
-
-  Future<dynamic> _getData(String url) async {
-    var response = await http.get(url);
-    var data = json.decode(response.body);
-    return data;
-  }
-
-  // Future<List<Task>> getFilms() async {
-  //   var data = await _getData('$_baseUrl/films');
-  //   List<dynamic> tasksData = data['results'];
-  //   List<Task> tasks = tasksData.map((f) => new Task(task:f)).toList();
-  //   return tasks;
-  // }
+class TaskApiServiceMock implements TaskApiService{
 
   Future<List<Task>> getTasks() async {
-    List<Task> tasks = [
-    new Task(
+    return Future.value(taskList);
+  }
+  
+}
+
+
+  const taskList = const<Task> [
+    const Task(
         name: "Catch up with Brian",
         category: "Mobile Project",
         time: "5pm",
         color: Colors.orange,
         completed: false),
-    new Task(
+    const Task(
         name: "Make new icons",
         category: "Web App",
         time: "3pm",
         color: Colors.cyan,
         completed: true),
-    new Task(
+    const Task(
         name: "Design explorations",
         category: "Company Website",
         time: "2pm",
         color: Colors.pink,
         completed: false),
-    new Task(
+    const Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
         color: Colors.cyan,
         completed: true),
-    new Task(
+    const Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
         color: Colors.cyan,
         completed: true),
-    new Task(
+    const Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
         color: Colors.cyan,
         completed: true),
-    new Task(
+    const Task(
         name: "Teem Meeting",
         category: "Hangouts",
         time: "10am",
         color: Colors.cyan,
         completed: true),
     ];
-    return tasks.toList();
-  }
-}

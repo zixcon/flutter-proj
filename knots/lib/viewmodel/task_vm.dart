@@ -2,11 +2,11 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:knots/model/task.dart';
-import 'package:knots/service/task_service.dart';
-import 'package:knots/viewmodel/mvvm.dart';
+import 'package:knots/service/api/task_service_api.dart';
+// import 'package:knots/viewmodel/mvvm.dart';
 
-// class TaskViewModel extends Model{
-class TaskViewModel extends ViewModel{
+class TaskViewModel extends Model{
+// class TaskViewModel extends ViewModel{
 
   Future<List<Task>> _tasks;
   Future<List<Task>> get tasks => _tasks;

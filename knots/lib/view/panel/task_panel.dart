@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
-// import 'package:scoped_model/scoped_model.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:knots/model/task.dart';
 import 'package:knots/viewmodel/task_vm.dart';
-import 'package:knots/viewmodel/mvvm.dart';
+// import 'package:knots/viewmodel/mvvm.dart';
 import 'package:knots/view/item/task_list.dart';
 
-// class TaskPanel extends StatelessWidget {
-class TaskPanel<TaskViewModel> extends View {
+class TaskPanel extends StatelessWidget {
+// class TaskPanel<TaskViewModel> extends View {
+
+  // TaskPanel({ Key key, ViewModel viewModel}) : super(key: key, viewModel: viewModel);
+
+  // TaskViewModel taskViewModel = viewModel;
 
   @override
   Widget build(BuildContext context) {
-    // return ScopedModelDescendant<TaskViewModel>(
-    //   builder: (context, child, model) {
+    return ScopedModelDescendant<TaskViewModel>(
+      builder: (context, child, model) {
         return FutureBuilder<List<Task>>(
-          //future: (viewModel as TaskViewModel) => viewModel.tasks,
+          future: model.tasks,
+          // future: (){
+          //   TaskViewModel taskViewModel = viewModel;
+          //   return taskViewModel.tasks;
+          // },
           builder: (_, AsyncSnapshot<List<Task>> snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.none:
@@ -35,6 +43,6 @@ class TaskPanel<TaskViewModel> extends View {
             }
           }
         );      
-      // });
+      });
   }
 }

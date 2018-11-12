@@ -2,11 +2,13 @@ import 'package:flutter/widgets.dart';
 
 abstract class ViewModel extends ChangeNotifier {}
 
-abstract class View<M extends ViewModel> extends StatefulWidget {
+abstract class View<T extends ViewModel> extends StatefulWidget {
   
   View({ Key key, this.viewModel }) : super(key: key);
 
-  final M viewModel;
+  T viewModel;
+
+  T getViewModel() => this.viewModel;
 
   Widget build(BuildContext context);
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:knots/viewmodel/task_vm.dart';
 import 'package:knots/view/panel/task_panel.dart';
-import 'package:knots/service/task_service.dart';
+import 'package:knots/service/mock/task_service_mock.dart';
 import 'package:knots/view/page/common/common_header.dart';
 import 'package:knots/view/page/common/common_image.dart';
 import 'package:knots/view/page/common/common_profile.dart';
@@ -18,12 +18,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    taskViewModel = TaskViewModel(api: TaskApiService());
+    taskViewModel = TaskViewModel(api: TaskApiServiceMock());
     loadData();
   }
 
   Future loadData() async {
-    await taskViewModel.tasks;
+    await taskViewModel.setTasks();
   }
   
   @override
