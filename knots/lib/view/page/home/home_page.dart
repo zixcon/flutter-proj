@@ -6,6 +6,7 @@ import 'package:knots/service/mock/task_service_mock.dart';
 import 'package:knots/view/page/common/common_header.dart';
 import 'package:knots/view/page/common/common_image.dart';
 import 'package:knots/view/page/common/common_profile.dart';
+import 'package:knots/view/page/common/common_timeline.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           CommonTopHeader(),
           CommonProfile(),
           TaskPanel(),
+          CommonTimeline(),
         ])
       ),
     );

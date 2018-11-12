@@ -44,9 +44,9 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
             indicatorColor: Colors.white,
             indicatorWeight: 3.0,
             tabs: <Widget>[
-              Tab(icon: Icon(Icons.arrow_left)),
-              Tab(icon: Icon(Icons.home)),
-              Tab(icon: Icon(Icons.arrow_right)),
+              Tab(icon: Icon(Icons.arrow_left),text: '左侧'),
+              Tab(icon: Icon(Icons.home),text: '首页'),
+              Tab(icon: Icon(Icons.arrow_right),text: '右侧'),
             ],
           ),
       ),
