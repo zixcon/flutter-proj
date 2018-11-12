@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:knots/viewmodel/task_vm.dart';
 import 'package:knots/view/panel/task_panel.dart';
 import 'package:knots/service/mock/task_service_mock.dart';
@@ -28,14 +29,26 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   
   @override
   Widget build(BuildContext context) {
+    // return new Scaffold(
+    //   body: new Stack(
+    //     children: <Widget>[
+    //       CommonTopImage(),
+    //       CommonTopHeader(),
+    //       CommonProfile(),
+    //       TaskPanel(),
+    //     ]
+    //   ),
+    // );
     return new Scaffold(
-      body: new Stack(
-        children: <Widget>[
+      body: ScopedModel<TaskViewModel>(
+        model: taskViewModel,
+        child: new Stack(
+          children: <Widget>[
           CommonTopImage(),
           CommonTopHeader(),
           CommonProfile(),
           TaskPanel(),
-        ]
+        ])
       ),
     );
   }
