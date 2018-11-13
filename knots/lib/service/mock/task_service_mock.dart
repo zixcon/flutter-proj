@@ -12,47 +12,47 @@ class TaskApiServiceMock implements TaskApiService{
 }
 
 
-  const taskList = const<Task> [
-    const Task(
+  List<Task> taskList = List<Task>.of( [
+    new Task(
         name: "Catch up with Brian",
         category: "Mobile Project",
         time: "5pm",
-        color: Colors.orange,
+        // color: Colors.orange,
         completed: false),
-    const Task(
+    new Task(
         name: "Make new icons",
         category: "Web App",
         time: "3pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
-    const Task(
+    new Task(
         name: "Design explorations",
         category: "Company Website",
         time: "2pm",
-        color: Colors.pink,
+        // color: Colors.pink,
         completed: false),
-    const Task(
+    new Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
-    const Task(
+    new Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
-    const Task(
+    new Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
-    const Task(
+    new Task(
         name: "Teem Meeting",
         category: "Hangouts",
         time: "10am",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
-    ];
+    ]);

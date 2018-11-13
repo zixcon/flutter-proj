@@ -26,7 +26,8 @@ class TaskRowState extends State<TaskRow> {
             child: new Container(
               height: widget.dotSize,
               width: widget.dotSize,
-              decoration: new BoxDecoration(shape: BoxShape.circle, color: widget.task.color),
+              // decoration: new BoxDecoration(shape: BoxShape.circle, color: widget.task.color),
+              decoration: new BoxDecoration(shape: BoxShape.circle, color: Colors.pink),
             ),
           ),
           new Expanded(

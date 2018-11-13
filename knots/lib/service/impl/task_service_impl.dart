@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 import 'package:knots/model/task.dart';
 import 'package:knots/service/api/task_service_api.dart';
 
@@ -14,8 +15,9 @@ class TaskApiServiceImpl implements TaskApiService{
   TaskApiServiceImpl.internal();
 
   Future<dynamic> _getData(String url) async {
-    var response = await http.get(url);
-    var data = json.decode(response.body);
+    Dio dio = new Dio();
+    Response response = await dio.get(url);
+    var data = json.decode(response.data);
     return data;
   }
 
@@ -32,43 +34,43 @@ class TaskApiServiceImpl implements TaskApiService{
         name: "Catch up with Brian",
         category: "Mobile Project",
         time: "5pm",
-        color: Colors.orange,
+        // color: Colors.orange,
         completed: false),
     new Task(
         name: "Make new icons",
         category: "Web App",
         time: "3pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
     new Task(
         name: "Design explorations",
         category: "Company Website",
         time: "2pm",
-        color: Colors.pink,
+        // color: Colors.pink,
         completed: false),
     new Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
     new Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
     new Task(
         name: "Lunch with Mary",
         category: "Grill House",
         time: "12pm",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
     new Task(
         name: "Teem Meeting",
         category: "Hangouts",
         time: "10am",
-        color: Colors.cyan,
+        // color: Colors.cyan,
         completed: true),
     ];
     return tasks.toList();

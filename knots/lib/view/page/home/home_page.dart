@@ -7,6 +7,7 @@ import 'package:knots/view/page/common/common_header.dart';
 import 'package:knots/view/page/common/common_image.dart';
 import 'package:knots/view/page/common/common_profile.dart';
 import 'package:knots/view/page/common/common_timeline.dart';
+import 'package:knots/view/page/home/home_fab_change.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -50,6 +51,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           CommonProfile(),
           TaskPanel(),
           CommonTimeline(),
+          AnimatedFabChange(),
         ])
       ),
     );
