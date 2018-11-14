@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:knots/view/page/home/home_page.dart';
 import 'package:knots/view/page/empty/empty_page.dart';
+import 'package:knots/view/page/todo/todo_page.dart';
 
 import 'package:scoped_model/scoped_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -32,7 +33,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       body: new TabBarView(
         controller: tabController,
         children: <Widget>[
-          new EmptyPage(),
+          new TodoPage(),
           new HomePage(),
           new EmptyPage(),
         ],
@@ -44,9 +45,9 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
             indicatorColor: Colors.white,
             indicatorWeight: 3.0,
             tabs: <Widget>[
-              Tab(icon: Icon(Icons.arrow_left),text: '左侧'),
-              Tab(icon: Icon(Icons.home),text: '首页'),
-              Tab(icon: Icon(Icons.arrow_right),text: '右侧'),
+              Tab(icon: Icon(Icons.arrow_left),text: '待办日历'),
+              Tab(icon: Icon(Icons.home),text: '心情日记'),
+              Tab(icon: Icon(Icons.arrow_right),text: '时光流年'),
             ],
           ),
       ),
