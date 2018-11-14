@@ -29,14 +29,8 @@ class TaskViewModel extends Model{
   }
 
   Future<bool> complete() async {
-    List<Task> list = new List();
-    list.add(new Task(
-          name: "Make new icons",
-          category: "Web App",
-          time: "3pm",
-          // color: Colors.cyan,
-          completed: true));
-    tasks = Future.value(list);
+    tasks = api?.getComplete();
     return tasks != null;
   }
+  
 }

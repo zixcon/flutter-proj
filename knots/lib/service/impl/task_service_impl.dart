@@ -27,7 +27,10 @@ class TaskApiServiceImpl implements TaskApiService{
   //   List<Task> tasks = tasksData.map((f) => new Task(task:f)).toList();
   //   return tasks;
   // }
-
+  Future<List<Task>> getComplete() async {
+    return null; 
+  }
+  
   Future<List<Task>> getTasks() async {
     List<Task> tasks = [
     new Task(

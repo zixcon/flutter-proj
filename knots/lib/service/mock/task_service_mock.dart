@@ -8,6 +8,11 @@ class TaskApiServiceMock implements TaskApiService{
   Future<List<Task>> getTasks() async {
     return Future.value(taskList);
   }
+
+  Future<List<Task>> getComplete() async {
+    List<Task> list = taskList.where((task) {task.completed;}).toList();
+    return Future.value(list);
+  }
   
 }
 
