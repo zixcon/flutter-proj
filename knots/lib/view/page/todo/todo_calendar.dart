@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calendar/flutter_calendar.dart';
 
 class CalendarViewApp extends StatelessWidget {
-  
+
   void handleNewDate(date) {
     print("handleNewDate ${date}");
   }
@@ -61,6 +61,16 @@ class CalendarViewApp extends StatelessWidget {
                     ),
                   );
                 },
+              ),
+              new Divider(
+                height: 50.0,
+              ),
+              new Text('A Custom Weekly Calendar:'),
+              new Calendar(
+                onSelectedRangeChange: (range) =>
+                    print("Range is ${range.item1}, ${range.item2}"),
+                onDateSelected: (date) => handleNewDate(date),
+                isExpandable: true,
               ),
             ],
           ),
