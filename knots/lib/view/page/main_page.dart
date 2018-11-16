@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:knots/view/page/home/home_page.dart';
 import 'package:knots/view/page/empty/empty_page.dart';
 import 'package:knots/view/page/todo/todo_page.dart';
+import 'package:knots/view/page/todo/todo_calendar.dart';
 
 import 'package:scoped_model/scoped_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -33,7 +34,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       body: new TabBarView(
         controller: tabController,
         children: <Widget>[
-          new TodoPage(),
+          new CalendarViewApp(),
+          // new TodoPage(),
           new HomePage(),
           new EmptyPage(),
         ],

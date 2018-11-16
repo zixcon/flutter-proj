@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
 import 'package:knots/model/task.dart';
 import 'package:knots/service/api/task_service_api.dart';
 
@@ -10,7 +9,7 @@ class TaskApiServiceMock implements TaskApiService{
   }
 
   Future<List<Task>> getComplete() async {
-    List<Task> list = taskList.where((task) {task.completed;}).toList();
+    List<Task> list = taskList.where((task) {return task.completed;}).toList();
     return Future.value(list);
   }
   
