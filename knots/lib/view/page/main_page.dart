@@ -34,22 +34,25 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       body: new TabBarView(
         controller: tabController,
         children: <Widget>[
-          new CalendarViewApp(),
-          // new TodoPage(),
+          // new TodoCalendar(),
+          new TodoPage(),
           new HomePage(),
           new EmptyPage(),
         ],
       ),
       bottomNavigationBar:  new Material(
-        color: Colors.greenAccent,
+        color: Colors.blueGrey,
         child: TabBar(
             controller: tabController,
             indicatorColor: Colors.white,
             indicatorWeight: 3.0,
             tabs: <Widget>[
-              Tab(icon: Icon(Icons.arrow_left),text: '待办日历'),
-              Tab(icon: Icon(Icons.home),text: '心情日记'),
-              Tab(icon: Icon(Icons.arrow_right),text: '时光流年'),
+              // Tab(icon: Icon(Icons.arrow_left),text: '待办日历'),
+              // Tab(icon: Icon(Icons.home),text: '心情日记'),
+              // Tab(icon: Icon(Icons.arrow_right),text: '时光流年'),
+              Tab(icon: Icon(Icons.arrow_left),text: 'A'),
+              Tab(icon: Icon(Icons.home),text: 'B'),
+              Tab(icon: Icon(Icons.arrow_right),text: 'C'),
             ],
           ),
       ),
